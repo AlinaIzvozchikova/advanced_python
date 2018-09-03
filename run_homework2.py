@@ -8,8 +8,10 @@ import sys
 
 
 def crash_using_ctypes(start_bool_value):
-    """ Crash python using ctypes lib.
+    """Crash python using ctypes lib.
+
     :param start_bool_value: bool start value
+
     """
 
     bool_var = ctypes.c_bool(start_bool_value)
@@ -20,8 +22,10 @@ def crash_using_ctypes(start_bool_value):
 
 
 def crash_using_recursion_limit(recursion_limit):
-    """ Resource exhaustion crash the python interpreter.
+    """Resource exhaustion crash the python interpreter.
+
     :param recursion_limit: integer value for recursion limit
+
     """
 
     sys.setrecursionlimit(recursion_limit)
