@@ -14,6 +14,7 @@ def crash_using_ctypes(start_bool_value):
     :param start_bool_value: bool start value
     :return:
     """
+
     bool_var = ctypes.c_bool(start_bool_value)
     bool_pointer = ctypes.pointer(bool_var)
 
@@ -28,8 +29,12 @@ def crash_using_recursion_limit(recursion_limit):
     :param recursion_limit: integer value for recursion limit
     :return:
     """
-    sys.setrecursionlimit(10000)
-    rec_function = lambda f: rec_function(f)
+
+    sys.setrecursionlimit(recursion_limit)
+
+    def rec_function(rec_function):
+        return rec_function(rec_function)
+
     rec_function(rec_function)
 
 
