@@ -11,10 +11,12 @@ Added shared number list outputs for show it filling.
 
 Using Condition synchronization object.
 """
-import time
 import random
-from threading import Thread
+import time
+
 from threading import Condition
+from threading import Thread
+
 
 MAX_NUMBER_LIST = 100
 
@@ -38,11 +40,12 @@ def even_numbers_reader(thread_max_print_count,
     print it and remove from list.
 
     :param thread_max_print_count: max count of print
-    :param lock_element_even_thread: even lock
-    :param lock_element_odd_thread: odd lock
+    :param even_thread_condition: even lock
+    :param odd_thread_condition: odd lock
     :param number_list: shared number list
-    :return:
+
     """
+
     max_print_count = 0
     while max_print_count < thread_max_print_count:
         if number_list and number_list[0] % 2 == 0:
@@ -68,11 +71,12 @@ def odd_numbers_reader(thread_max_print_count,
     print it and remove from list.
 
     :param thread_max_print_count: max count of print
-    :param lock_element_even_thread: even lock
-    :param lock_element_odd_thread: odd lock
+    :param even_thread_condition: even lock
+    :param odd_thread_condition: odd lock
     :param number_list: shared number list
-    :return:
+
     """
+
     max_print_count = 0
     while max_print_count < thread_max_print_count:
         if number_list and number_list[0] % 2 != 0:
