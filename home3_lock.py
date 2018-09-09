@@ -36,8 +36,7 @@ def even_numbers_reader(thread_max_print_count,
                         lock_element_even_thread,
                         lock_element_odd_thread,
                         number_list):
-    """Listen shared number list, if there are even numbers
-    print it and remove from list.
+    """Listen shared number list, print it and remove even numbers.
 
     :param thread_max_print_count: max count of print
     :param lock_element_even_thread: even lock
@@ -61,8 +60,7 @@ def odd_numbers_reader(thread_max_print_count,
                        lock_element_even_thread,
                        lock_element_odd_thread,
                        number_list):
-    """Listen shared number list, if there are odd numbers
-    print it and remove from list.
+    """Listen shared number list, print it and remove odd numbers.
 
     :param thread_max_print_count: max count of print
     :param lock_element_even_thread: even lock

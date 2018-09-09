@@ -35,8 +35,7 @@ def number_list_writer(number_list):
 
 def even_numbers_reader(thread_max_print_count,
                         number_list):
-    """Listen shared number list, if there are even numbers
-    print it and remove from list.
+    """Listen shared number list, print it and remove even numbers.
 
     :param thread_max_print_count: max count of print
     :param number_list: shared number list
@@ -55,8 +54,7 @@ def even_numbers_reader(thread_max_print_count,
 
 def odd_numbers_reader(thread_max_print_count,
                        number_list):
-    """Listen shared number list, if there are odd numbers
-    print it and remove from list.
+    """Listen shared number list, print it and remove odd numbers.
 
     :param thread_max_print_count: max count of print
     :param number_list: shared number list
