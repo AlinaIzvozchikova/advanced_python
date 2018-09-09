@@ -7,7 +7,7 @@ print it.
 
 Using Lock synchronization object and shared memory.
 """
-from multiprocessing import Process, Array, Lock
+import multiprocessing
 
 MAX_NUMBER_LIST = 100
 
@@ -48,22 +48,22 @@ def odd_numbers_reader(number_list,
 
 if __name__ == '__main__':
 
-    number_list = Array('i', range(0, MAX_NUMBER_LIST + 1))
+    number_list = multiprocessing.Array('i', range(0, MAX_NUMBER_LIST + 1))
 
-    lock_p_even = Lock()
-    lock_p_odd = Lock()
-    
+    lock_p_even = multiprocessing.Lock()
+    lock_p_odd = multiprocessing.Lock()
+
     lock_p_even.acquire()
 
-    p_even = Process(target=even_numbers_reader,
-                     args=(number_list,
-                           lock_p_even,
-                           lock_p_odd))
+    p_even = multiprocessing.Process(target=even_numbers_reader,
+                                     args=(number_list,
+                                           lock_p_even,
+                                           lock_p_odd))
 
-    p_odd = Process(target=odd_numbers_reader,
-                    args=(number_list,
-                          lock_p_even,
-                          lock_p_odd))
+    p_odd = multiprocessing.Process(target=odd_numbers_reader,
+                                    args=(number_list,
+                                          lock_p_even,
+                                          lock_p_odd))
 
     p_even.start()
     p_odd.start()
