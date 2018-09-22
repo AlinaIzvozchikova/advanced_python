@@ -28,7 +28,8 @@ class Money(object):
         if self.currency == money.currency:
             new_value = self.value + money.value
         else:
-            money_currency = self.get_current_currencies()['rates'].get(money.currency, None)
+            money_currency = self.get_current_currencies()['rates']\
+                .get(money.currency, None)
             new_value = self.value + (money.value / money_currency)
         return Money(new_value, self.currency)
 
@@ -41,7 +42,8 @@ class Money(object):
         if self.currency == money.currency:
             new_value = self.value - money.value
         else:
-            money_currency = self.get_current_currencies()['rates'].get(money.currency, None)
+            money_currency = self.get_current_currencies()['rates']\
+                .get(money.currency, None)
             new_value = self.value - (money.value / money_currency)
         return Money(new_value, self.currency)
 
