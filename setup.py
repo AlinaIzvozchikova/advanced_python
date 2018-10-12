@@ -13,7 +13,7 @@ setup(
     author='Alina Izvozchikova',
     author_email='alina_iz@mail.ru',
     url='http://www.epam.com',
-    scripts=['start_app.py',],
-    packages=['metaclass_property',],
+    scripts=['start_app.py', ],
+    packages=['metaclass_property', ],
     long_description=read('README.md'),
 )

@@ -1,3 +1,3 @@
-name = "metaclass_property"
-
 from .module import Example
+
+name = "metaclass_property"
