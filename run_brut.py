@@ -18,8 +18,9 @@ def best_value(elem_iter, capacity):
     else:
         return max(
             best_value(elem_iter - 1, capacity),
-            best_value(elem_iter - 1, capacity - all_items[elem_iter - 1].weight)
-            + all_items[elem_iter - 1].value)
+            best_value(elem_iter - 1,
+                       capacity - all_items[elem_iter - 1].weight
+                       ) + all_items[elem_iter - 1].value)
 
 
 if __name__ == '__main__':
@@ -36,7 +37,9 @@ if __name__ == '__main__':
             knapsack_items.append(all_items[i])
             CAPACITY -= all_items[i].weight
 
-    knapsack_items = sorted(knapsack_items, key=lambda x: x.value, reverse=True)
+    knapsack_items = sorted(knapsack_items,
+                            key=lambda x: x.value,
+                            reverse=True)
 
     total_weight = 0
     max_value = 0

@@ -8,7 +8,7 @@ def convert_to_item(value):
     return Item(value[0],
                 int(value[1]),
                 int(value[2]),
-                int(value[2])/int(value[1]))
+                int(value[2]) / int(value[1]))
 
 
 if __name__ == '__main__':
